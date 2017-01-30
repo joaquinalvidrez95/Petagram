@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Petagram</string>
+
+    <string name="menu_options_about_title">About</string>
+    <string name="menu_options_contact_title">Contact</string>
+    <string name="menu_options_star_title">Recently Liked</string>
+
+    <string name="tv_cardview_pet_name">Pork</string>
+    <string name="cardview_like_snackbar_message">Liked </string>
+    <string name="activity_recently_liked_pets_title">Recently Liked Pets</string>
+</resources>

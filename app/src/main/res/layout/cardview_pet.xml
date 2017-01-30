@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_pet"
+    android:layout_width="250dp"
+    android:layout_height="250dp"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="@dimen/activity_vertical_margin"
+    card_view:cardCornerRadius="@dimen/cardview_corner_radius">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/img_pet_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:padding="@dimen/cardview_img_padding"
+            android:src="@drawable/schnauzer" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btn_like_bone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/cardview_btn_like_bone_margin_left"
+                android:background="@drawable/ic_white_dog_bone" />
+
+            <TextView
+                android:id="@+id/tv_cardview_pet_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/btn_like_bone"
+                android:paddingLeft="@dimen/cardview_tv_pet_name_padding_left"
+                android:text="@string/tv_cardview_pet_name"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_cardview_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/img_cardview_rating"
+                android:text="5" />
+
+            <ImageView
+                android:id="@+id/img_cardview_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingRight="15dp"
+                android:src="@drawable/ic_yellow_dog_bone" />
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>
