@@ -1,4 +1,4 @@
-package com.joaquinalan.petagram;
+package com.joaquinalan.petagram.adapter;
 
 import android.app.Activity;
 import android.support.design.widget.Snackbar;
@@ -9,7 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.joaquinalan.petagram.R;
+import com.joaquinalan.petagram.pojo.Pet;
 
 import java.util.ArrayList;
 
@@ -29,7 +31,7 @@ public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetViewHolder> {
     // It inflates layout and passes viewHolder to get the views
     @Override
     public PetViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_pet, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_petadapter_petcardview, parent, false);
         return new PetViewHolder(view);
     }
 
@@ -45,7 +47,7 @@ public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetViewHolder> {
         holder.btnLikeBone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, mActivity.getString(R.string.cardview_like_snackbar_message) +
+                Snackbar.make(view, mActivity.getString(R.string.petadapter_likesnackbarmessage) +
                         " " + pet.getName(), Snackbar.LENGTH_SHORT).show();
                 pet.likePet();
                 holder.tvRating.setText(String.valueOf(pet.getRating()));
@@ -66,10 +68,10 @@ public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetViewHolder> {
 
         public PetViewHolder(View itemView) {
             super(itemView);
-            imgPetImage = (ImageView) itemView.findViewById(R.id.img_pet_image);
-            btnLikeBone = (ImageButton) itemView.findViewById(R.id.btn_like_bone);
-            tvName = (TextView) itemView.findViewById(R.id.tv_cardview_pet_name);
-            tvRating = (TextView) itemView.findViewById(R.id.tv_cardview_rating);
+            imgPetImage = (ImageView) itemView.findViewById(R.id.imageview_mypetcardview_petimage);
+            btnLikeBone = (ImageButton) itemView.findViewById(R.id.button_petcardview_likebone);
+            tvName = (TextView) itemView.findViewById(R.id.textview_petcardview_petname);
+            tvRating = (TextView) itemView.findViewById(R.id.textview_mypetcardview_rating);
         }
     }
 }

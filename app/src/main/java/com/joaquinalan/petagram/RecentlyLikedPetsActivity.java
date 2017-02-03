@@ -6,6 +6,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
+import com.joaquinalan.petagram.adapter.PetAdapter;
+import com.joaquinalan.petagram.pojo.Pet;
+
 import java.util.ArrayList;
 
 public class RecentlyLikedPetsActivity extends AppCompatActivity {
@@ -15,16 +18,15 @@ public class RecentlyLikedPetsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recently_liked_pets);
+        setContentView(R.layout.activity_recentlylikedpets);
 
-        Toolbar tbMyActionBar = (Toolbar) findViewById(R.id.action_bar);
+        Toolbar tbMyActionBar = (Toolbar) findViewById(R.id.toolbar_recentlylikedpets);
         setSupportActionBar(tbMyActionBar);
-
-        getSupportActionBar().setTitle(R.string.activity_recently_liked_pets_title);
+        getSupportActionBar().setTitle(R.string.recentlylikedpets_toolbartitle);
         getSupportActionBar().setIcon(R.drawable.ic_cat_footprint);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        rvPets = (RecyclerView) findViewById(R.id.rv_recently_liked_pets);
+        rvPets = (RecyclerView) findViewById(R.id.recyclerview_recentlylikedpets);
 
         LinearLayoutManager llmMyLayout = new LinearLayoutManager(this);
         llmMyLayout.setOrientation(LinearLayoutManager.VERTICAL);

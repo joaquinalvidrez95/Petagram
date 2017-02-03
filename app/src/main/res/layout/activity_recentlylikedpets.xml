@@ -7,14 +7,14 @@
     tools:context="com.joaquinalan.petagram.RecentlyLikedPetsActivity">
 
     <include
-        android:id="@+id/action_bar"
-        layout="@layout/action_bar"></include>
+        android:id="@+id/toolbar_recentlylikedpets"
+        layout="@layout/layout_all_toolbar"></include>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_recently_liked_pets"
+        android:id="@+id/recyclerview_recentlylikedpets"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/action_bar"
+        android:layout_below="@+id/toolbar_recentlylikedpets"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:padding="@dimen/activity_horizontal_margin" />

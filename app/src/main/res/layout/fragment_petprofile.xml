@@ -1,0 +1,43 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.joaquinalan.petagram.fragment.PetProfileFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:layout_width="@dimen/size_petprofile_profilepicture"
+            android:layout_height="@dimen/size_petprofile_profilepicture"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_petprofile_profilepicture"
+            android:src="@drawable/all_youngpig"
+            app:civ_border="true"
+            app:civ_border_color="@color/colorAccent"
+            app:civ_border_width="@dimen/width_petprofile_profilepictureborder"
+            app:civ_shadow="true"
+            app:civ_shadow_color="#463e45"
+            app:civ_shadow_radius="3" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/petprofile_petname"
+            android:textSize="@dimen/textsize_petprofile_petname"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview_petprofile_images"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/activity_horizontal_margin" />
+    </LinearLayout>
+
+</FrameLayout>

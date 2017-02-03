@@ -1,11 +1,25 @@
 <resources>
     <string name="app_name">Petagram</string>
 
-    <string name="menu_options_about_title">About</string>
-    <string name="menu_options_contact_title">Contact</string>
-    <string name="menu_options_star_title">Recently Liked</string>
+    <string name="optionsmenu_abouttitle">About</string>
+    <string name="optionsmenu_contacttitle">Contact</string>
+    <string name="optionsmenu_startitle">Recently Liked</string>
 
-    <string name="tv_cardview_pet_name">Pork</string>
-    <string name="cardview_like_snackbar_message">Liked </string>
-    <string name="activity_recently_liked_pets_title">Recently Liked Pets</string>
+    <string name="petcardview_petname">Pork</string>
+    <string name="petadapter_likesnackbarmessage">Liked </string>
+    <string name="recentlylikedpets_toolbartitle">Recently Liked Pets</string>
+
+    <string name="contact_namehint">Name</string>
+    <string name="contact_emailhint">Email</string>
+    <string name="contact_commenthint">Comment</string>
+    <string name="contact_toolbartitle">Contact</string>
+    <string name="contact_sendbuttontext">Send</string>
+
+    <string name="petprofile_petname">Pork</string>
+
+    <string name="about_developerinformation">This is Joaquín Alvidrez</string>
+    <string name="about_developername">Joaquín Alvidrez</string>
+    <string name="about_toolbartitle">About</string>
+
+
 </resources>

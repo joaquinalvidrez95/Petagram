@@ -2,39 +2,47 @@ package com.joaquinalan.petagram;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.joaquinalan.petagram.adapter.PageAdapter;
+import com.joaquinalan.petagram.fragment.HomeFragment;
+import com.joaquinalan.petagram.fragment.PetProfileFragment;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private ArrayList<Pet> mPetList;
-    private RecyclerView rvPets;
+    private Toolbar tb;
+    private TabLayout tl;
+    private ViewPager vp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar tbMyActionBar = (Toolbar) findViewById(R.id.action_bar);
+        /*Toolbar tbMyActionBar = (Toolbar) findViewById(R.id.tb_activity_main);
         setSupportActionBar(tbMyActionBar);
 
         getSupportActionBar().setTitle(R.string.app_name);
-        getSupportActionBar().setIcon(R.drawable.ic_cat_footprint);
+        getSupportActionBar().setIcon(R.drawable.ic_cat_footprint);*/
 
-        rvPets = (RecyclerView) findViewById(R.id.rv_pets);
+        tb = (Toolbar) findViewById(R.id.tb);
+        tl = (TabLayout) findViewById(R.id.tl);
+        vp = (ViewPager) findViewById(R.id.vp);
 
-        LinearLayoutManager llmMyLayout = new LinearLayoutManager(this);
-        llmMyLayout.setOrientation(LinearLayoutManager.VERTICAL);
+        setupViewPager();
 
-        rvPets.setLayoutManager(llmMyLayout);
-
-        initializePetList();
-        initializeAdapter();
+        if (tb != null) {
+            setSupportActionBar(tb);
+            getSupportActionBar().setTitle(R.string.app_name);
+            getSupportActionBar().setIcon(R.drawable.ic_cat_footprint);
+        }
     }
 
     @Override
@@ -46,29 +54,34 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.m_options_star:
+            case R.id.item_optionsmenu_star:
                 Intent recentlyLikedIntent = new Intent(this, RecentlyLikedPetsActivity.class);
                 startActivity(recentlyLikedIntent);
+                break;
+            case R.id.item_optionsmenu_contact:
+                Intent contactIntent = new Intent(this, ContactActivity.class);
+                startActivity(contactIntent);
+                break;
+            case R.id.item_optionsmenu_about:
+                Intent aboutIntent = new Intent(this, AboutActivity.class);
+                startActivity(aboutIntent);
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    public void initializePetList() {
-        mPetList = new ArrayList<>();
-        mPetList.add(new Pet("Melanie", 0, R.drawable.pig));
-        mPetList.add(new Pet("Bobby", 0, R.drawable.lion));
-        mPetList.add(new Pet("Lassie", 0, R.drawable.rough_collie));
-        mPetList.add(new Pet("Ramón", 0, R.drawable.schnauzer));
-        mPetList.add(new Pet("Gatillo", 0, R.drawable.cat));
-        mPetList.add(new Pet("Toño", 0, R.drawable.tiger));
-        mPetList.add(new Pet("Omar", 0, R.drawable.nigga));
-        mPetList.add(new Pet("Mickey", 0, R.drawable.rat));
-        mPetList.add(new Pet("Rathalos", 0, R.drawable.dragon));
+    private void setupViewPager() {
+        vp.setAdapter(new PageAdapter(getSupportFragmentManager(), addFragments()));
+        tl.setupWithViewPager(vp);
+        tl.getTabAt(0).setIcon(R.drawable.ic_home);
+        tl.getTabAt(1).setIcon(R.drawable.ic_dog);
     }
 
-    public void initializeAdapter() {
-        PetAdapter adapter = new PetAdapter(mPetList, this);
-        rvPets.setAdapter(adapter);
+    private ArrayList<Fragment> addFragments() {
+        ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
+
+        fragmentArrayList.add(new HomeFragment());
+        fragmentArrayList.add(new PetProfileFragment());
+        return fragmentArrayList;
     }
 }

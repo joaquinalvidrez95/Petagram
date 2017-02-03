@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cv_pet"
-    android:layout_width="250dp"
-    android:layout_height="250dp"
+    android:id="@+id/cardview_petadapter_pet"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_petcardview"
     android:layout_centerHorizontal="true"
     android:layout_marginBottom="@dimen/activity_vertical_margin"
-    card_view:cardCornerRadius="@dimen/cardview_corner_radius">
+    card_view:cardCornerRadius="@dimen/radius_petcardview_corners">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,10 +14,11 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/img_pet_image"
+            android:id="@+id/imageview_mypetcardview_petimage"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:padding="@dimen/cardview_img_padding"
+            android:layout_height="@dimen/height_petcardview_petimage"
+            android:layout_gravity="center"
+            android:padding="@dimen/padding_petcardview_petimage"
             android:src="@drawable/schnauzer" />
 
         <RelativeLayout
@@ -25,38 +26,38 @@
             android:layout_height="match_parent">
 
             <ImageButton
-                android:id="@+id/btn_like_bone"
+                android:id="@+id/button_petcardview_likebone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="@dimen/cardview_btn_like_bone_margin_left"
+                android:layout_marginLeft="@dimen/margin_petcardview_bonebutton"
                 android:background="@drawable/ic_white_dog_bone" />
 
             <TextView
-                android:id="@+id/tv_cardview_pet_name"
+                android:id="@+id/textview_petcardview_petname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/btn_like_bone"
-                android:paddingLeft="@dimen/cardview_tv_pet_name_padding_left"
-                android:text="@string/tv_cardview_pet_name"
+                android:layout_toRightOf="@+id/button_petcardview_likebone"
+                android:layout_marginLeft="@dimen/margin_petcardview_petname_"
+                android:text="@string/petcardview_petname"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_cardview_rating"
+                android:id="@+id/textview_mypetcardview_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/img_cardview_rating"
+                android:layout_toLeftOf="@+id/imageview_mypetcardview_ratingbone"
                 android:text="5" />
 
             <ImageView
-                android:id="@+id/img_cardview_rating"
+                android:id="@+id/imageview_mypetcardview_ratingbone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:paddingRight="15dp"
+                android:layout_marginRight="@dimen/margin_petcardview_ratingbone"
                 android:src="@drawable/ic_yellow_dog_bone" />
         </RelativeLayout>
     </LinearLayout>

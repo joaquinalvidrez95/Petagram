@@ -3,10 +3,21 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="cardview_corner_radius">15dp</dimen>
-    <dimen name="cardview_img_padding">10dp</dimen>
-    <dimen name="cardview_tv_pet_name_padding_left">15dp</dimen>
-    <dimen name="cardview_btn_like_bone_margin_left">20dp</dimen>
+    <dimen name="radius_petcardview_corners">15dp</dimen>
+    <dimen name="padding_petcardview_petimage">10dp</dimen>
+    <dimen name="margin_petcardview_petname_">15dp</dimen>
+    <dimen name="margin_petcardview_bonebutton">20dp</dimen>
+    <dimen name="height_petcardview_petimage">200dp</dimen>
+    <dimen name="margin_petcardview_ratingbone">15dp</dimen>
+    <dimen name="height_petcardview">250dp</dimen>
 
-    <dimen name="action_bar_elevation">4dp</dimen>
+    <dimen name="elevation_toolbar">4dp</dimen>
+
+    <dimen name="textsize_about_name">30sp</dimen>
+
+    <dimen name="textsize_petprofile_petname">20sp</dimen>
+    <dimen name="size_petprofile_profilepicture">100dp</dimen>
+    <dimen name="margin_petprofile_profilepicture">20dp</dimen>
+    <dimen name="width_petprofile_profilepictureborder">5dp</dimen>
+
 </resources>
