@@ -36,8 +36,8 @@ public class MyPetAdapter extends RecyclerView.Adapter<MyPetAdapter.MyPetViewHol
     public void onBindViewHolder(MyPetViewHolder holder, int position) {
         final MyPetImage petImage = mMyPetImageList.get(position);
 
-        holder.imgPetImage.setImageResource(petImage.getImage());
-        holder.tvRating.setText(String.valueOf(petImage.getRating()));
+        holder.mImageViewPetImage.setImageResource(petImage.getImage());
+        holder.mTextViewRating.setText(String.valueOf(petImage.getRating()));
     }
 
     @Override
@@ -46,13 +46,13 @@ public class MyPetAdapter extends RecyclerView.Adapter<MyPetAdapter.MyPetViewHol
     }
 
     public static class MyPetViewHolder extends RecyclerView.ViewHolder {
-        private ImageView imgPetImage;
-        private TextView tvRating;
+        private ImageView mImageViewPetImage;
+        private TextView mTextViewRating;
 
         public MyPetViewHolder(View itemView) {
             super(itemView);
-            imgPetImage = (ImageView) itemView.findViewById(R.id.imageview_mypetcardview_petimage);
-            tvRating = (TextView) itemView.findViewById(R.id.textview_mypetcardview_rating);
+            mImageViewPetImage = (ImageView) itemView.findViewById(R.id.imageview_mypetcardview_petimage);
+            mTextViewRating = (TextView) itemView.findViewById(R.id.textview_mypetcardview_rating);
         }
     }
 }

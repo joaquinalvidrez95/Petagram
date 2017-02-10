@@ -5,6 +5,6 @@ package com.joaquinalan.petagram.pojo;
  */
 
 public class EmailAccount {
-    public static final String EMAIL = "memoteros@gmail.com";
+    public static final String EMAIL = "joaquin.mailtest@gmail.com";
     public static final String PASSWORD = "memoteros95";
 }

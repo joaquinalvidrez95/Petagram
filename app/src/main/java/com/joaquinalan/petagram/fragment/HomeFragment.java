@@ -21,7 +21,7 @@ import java.util.ArrayList;
  */
 public class HomeFragment extends Fragment {
     private ArrayList<Pet> mPetList;
-    private RecyclerView rvPets;
+    private RecyclerView mRecyclerViewPets;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -32,11 +32,11 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        rvPets = (RecyclerView) view.findViewById(R.id.recyclerview_home_pets);
+        mRecyclerViewPets = (RecyclerView) view.findViewById(R.id.recyclerview_home_pets);
 
         LinearLayoutManager llmMyLayout = new LinearLayoutManager(getActivity());
         llmMyLayout.setOrientation(LinearLayoutManager.VERTICAL);
-        rvPets.setLayoutManager(llmMyLayout);
+        mRecyclerViewPets.setLayoutManager(llmMyLayout);
 
         initializePetList();
         initializeAdapter();
@@ -58,7 +58,7 @@ public class HomeFragment extends Fragment {
 
     public void initializeAdapter() {
         PetAdapter adapter = new PetAdapter(mPetList, getActivity());
-        rvPets.setAdapter(adapter);
+        mRecyclerViewPets.setAdapter(adapter);
     }
 
 }

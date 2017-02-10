@@ -13,4 +13,6 @@
         <item name="colorControlHighlight">@color/colorButtonPressed</item>
         <item name="android:textColor">@color/colorButtonText</item>
     </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

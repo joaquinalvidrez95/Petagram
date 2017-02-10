@@ -17,9 +17,9 @@ import com.joaquinalan.petagram.fragment.PetProfileFragment;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private Toolbar tb;
-    private TabLayout tl;
-    private ViewPager vp;
+    private Toolbar mToolbar;
+    private TabLayout mTabLayout;
+    private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +32,14 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(R.string.app_name);
         getSupportActionBar().setIcon(R.drawable.ic_cat_footprint);*/
 
-        tb = (Toolbar) findViewById(R.id.tb);
-        tl = (TabLayout) findViewById(R.id.tl);
-        vp = (ViewPager) findViewById(R.id.vp);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar_main);
+        mTabLayout = (TabLayout) findViewById(R.id.tablayout_main);
+        mViewPager = (ViewPager) findViewById(R.id.viewpager_main);
 
         setupViewPager();
 
-        if (tb != null) {
-            setSupportActionBar(tb);
+        if (mToolbar != null) {
+            setSupportActionBar(mToolbar);
             getSupportActionBar().setTitle(R.string.app_name);
             getSupportActionBar().setIcon(R.drawable.ic_cat_footprint);
         }
@@ -71,10 +71,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupViewPager() {
-        vp.setAdapter(new PageAdapter(getSupportFragmentManager(), addFragments()));
-        tl.setupWithViewPager(vp);
-        tl.getTabAt(0).setIcon(R.drawable.ic_home);
-        tl.getTabAt(1).setIcon(R.drawable.ic_dog);
+        mViewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), addFragments()));
+        mTabLayout.setupWithViewPager(mViewPager);
+        mTabLayout.getTabAt(0).setIcon(R.drawable.ic_home);
+        mTabLayout.getTabAt(1).setIcon(R.drawable.ic_dog);
     }
 
     private ArrayList<Fragment> addFragments() {
