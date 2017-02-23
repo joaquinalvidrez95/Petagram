@@ -48,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/imageview_mypetcardview_ratingbone"
+                android:layout_toLeftOf="@+id/imageview_petcardview_ratingbone"
                 android:text="5" />
 
             <ImageView

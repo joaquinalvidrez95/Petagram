@@ -61,10 +61,10 @@ public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetViewHolder> {
     }
 
     public static class PetViewHolder extends RecyclerView.ViewHolder {
-        private ImageView mImageViewPetImage;
-        private ImageButton mButtonLikeBone;
-        private TextView mTextViewName;
-        private TextView mTextViewRating;
+        private final ImageView mImageViewPetImage;
+        private final ImageButton mButtonLikeBone;
+        private final TextView mTextViewName;
+        private final TextView mTextViewRating;
 
         public PetViewHolder(View itemView) {
             super(itemView);

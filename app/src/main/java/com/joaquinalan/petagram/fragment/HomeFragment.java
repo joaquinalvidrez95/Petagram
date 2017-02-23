@@ -38,12 +38,12 @@ public class HomeFragment extends Fragment {
         llmMyLayout.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerViewPets.setLayoutManager(llmMyLayout);
 
-        initializePetList();
-        initializeAdapter();
+        initiatePetList();
+        initiateAdapter();
         return view;
     }
 
-    public void initializePetList() {
+    public void initiatePetList() {
         mPetList = new ArrayList<>();
         mPetList.add(new Pet("Melanie", 0, R.drawable.pig));
         mPetList.add(new Pet("Bobby", 0, R.drawable.lion));
@@ -56,7 +56,7 @@ public class HomeFragment extends Fragment {
         mPetList.add(new Pet("Rathalos", 0, R.drawable.dragon));
     }
 
-    public void initializeAdapter() {
+    public void initiateAdapter() {
         PetAdapter adapter = new PetAdapter(mPetList, getActivity());
         mRecyclerViewPets.setAdapter(adapter);
     }
