@@ -1,4 +1,4 @@
-package com.joaquinalan.petagram;
+package com.joaquinalan.petagram.view.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,14 +10,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.joaquinalan.petagram.adapter.PageAdapter;
-import com.joaquinalan.petagram.fragment.HomeFragment;
-import com.joaquinalan.petagram.fragment.PetProfileFragment;
+import com.joaquinalan.petagram.R;
+import com.joaquinalan.petagram.view.adapter.PageAdapter;
+import com.joaquinalan.petagram.view.fragment.HomeFragment;
+import com.joaquinalan.petagram.view.fragment.PetProfileFragment;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private Toolbar mToolbar;
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
 
@@ -32,14 +33,14 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(R.string.app_name);
         getSupportActionBar().setIcon(R.drawable.ic_cat_footprint);*/
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);
         mTabLayout = (TabLayout) findViewById(R.id.tablayout_main);
         mViewPager = (ViewPager) findViewById(R.id.viewpager_main);
 
         setupViewPager();
 
-        if (mToolbar != null) {
-            setSupportActionBar(mToolbar);
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
             getSupportActionBar().setTitle(R.string.app_name);
             getSupportActionBar().setIcon(R.drawable.ic_cat_footprint);
         }
@@ -71,13 +72,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupViewPager() {
-        mViewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), addFragments()));
+        mViewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), getFragments()));
         mTabLayout.setupWithViewPager(mViewPager);
         mTabLayout.getTabAt(0).setIcon(R.drawable.ic_home);
         mTabLayout.getTabAt(1).setIcon(R.drawable.ic_dog);
     }
 
-    private ArrayList<Fragment> addFragments() {
+    private List<Fragment> getFragments() {
         ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
 
         fragmentArrayList.add(new HomeFragment());

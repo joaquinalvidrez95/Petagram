@@ -1,4 +1,4 @@
-package com.joaquinalan.petagram.fragment;
+package com.joaquinalan.petagram.view.fragment;
 
 
 import android.os.Bundle;
@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.joaquinalan.petagram.R;
-import com.joaquinalan.petagram.adapter.PetAdapter;
-import com.joaquinalan.petagram.pojo.Pet;
+import com.joaquinalan.petagram.model.pojo.Pet;
+import com.joaquinalan.petagram.view.adapter.PetAdapter;
 
 import java.util.ArrayList;
 

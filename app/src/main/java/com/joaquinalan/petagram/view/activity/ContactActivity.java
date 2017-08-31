@@ -1,4 +1,4 @@
-package com.joaquinalan.petagram;
+package com.joaquinalan.petagram.view.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+
+import com.joaquinalan.petagram.R;
+import com.joaquinalan.petagram.model.Email;
 
 public class ContactActivity extends AppCompatActivity {
     private TextInputLayout tilName;

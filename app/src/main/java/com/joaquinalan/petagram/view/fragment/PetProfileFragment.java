@@ -1,4 +1,4 @@
-package com.joaquinalan.petagram.fragment;
+package com.joaquinalan.petagram.view.fragment;
 
 
 import android.os.Bundle;
@@ -10,17 +10,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.joaquinalan.petagram.R;
-import com.joaquinalan.petagram.adapter.MyPetAdapter;
-import com.joaquinalan.petagram.pojo.MyPetImage;
+import com.joaquinalan.petagram.model.pojo.MyPetImage;
+import com.joaquinalan.petagram.view.adapter.MyPetAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class PetProfileFragment extends Fragment {
-    private ArrayList<MyPetImage> mMyPetImage;
+    private List<MyPetImage> mMyPetImage;
     private RecyclerView mRecyclerViewMyPetImages;
 
     public PetProfileFragment() {

@@ -1,11 +1,9 @@
-package com.joaquinalan.petagram;
+package com.joaquinalan.petagram.model;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
-
-import com.joaquinalan.petagram.pojo.EmailAccount;
 
 import java.util.Properties;
 

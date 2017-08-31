@@ -1,4 +1,4 @@
-package com.joaquinalan.petagram.adapter;
+package com.joaquinalan.petagram.view.adapter;
 
 import android.app.Activity;
 import android.support.design.widget.Snackbar;
@@ -11,19 +11,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.joaquinalan.petagram.R;
-import com.joaquinalan.petagram.pojo.Pet;
+import com.joaquinalan.petagram.model.pojo.Pet;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by joaquinalan on 29/01/2017.
  */
 
 public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetViewHolder> {
-    private ArrayList<Pet> mPetList;
+    private List<Pet> mPetList;
     private Activity mActivity;
 
-    public PetAdapter(ArrayList<Pet> petList, Activity activity) {
+    public PetAdapter(List<Pet> petList, Activity activity) {
         this.mPetList = petList;
         this.mActivity = activity;
     }

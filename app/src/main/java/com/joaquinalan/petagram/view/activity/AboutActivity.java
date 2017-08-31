@@ -1,8 +1,10 @@
-package com.joaquinalan.petagram;
+package com.joaquinalan.petagram.view.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+
+import com.joaquinalan.petagram.R;
 
 public class AboutActivity extends AppCompatActivity {
 

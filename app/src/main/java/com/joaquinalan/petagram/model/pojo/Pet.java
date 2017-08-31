@@ -1,4 +1,4 @@
-package com.joaquinalan.petagram.pojo;
+package com.joaquinalan.petagram.model.pojo;
 
 /**
  * Created by joaquinalan on 29/01/2017.
@@ -15,30 +15,30 @@ public class Pet {
         this.mImage = image;
     }
 
-    // Setters
-    public void setName(String name) {
-        this.mName = name;
+    // Getters
+    public int getRating() {
+        return mRating;
     }
 
     public void setRating(int rating) {
         this.mRating = rating;
     }
 
-    public void setImage(int image) {
-        this.mImage = image;
-    }
-
-    // Getters
-    public int getRating() {
-        return mRating;
-    }
-
     public int getImage() {
         return mImage;
     }
 
+    public void setImage(int image) {
+        this.mImage = image;
+    }
+
     public String getName() {
         return mName;
+    }
+
+    // Setters
+    public void setName(String name) {
+        this.mName = name;
     }
 
     public void likePet() {

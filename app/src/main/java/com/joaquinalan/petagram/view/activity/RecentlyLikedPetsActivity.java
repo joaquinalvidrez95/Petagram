@@ -1,18 +1,20 @@
-package com.joaquinalan.petagram;
+package com.joaquinalan.petagram.view.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
-import com.joaquinalan.petagram.adapter.PetAdapter;
-import com.joaquinalan.petagram.pojo.Pet;
+import com.joaquinalan.petagram.R;
+import com.joaquinalan.petagram.model.pojo.Pet;
+import com.joaquinalan.petagram.view.adapter.PetAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RecentlyLikedPetsActivity extends AppCompatActivity {
-    private ArrayList<Pet> mPetList;
+    private List<Pet> mPetList;
     private RecyclerView rvPets;
 
     @Override
