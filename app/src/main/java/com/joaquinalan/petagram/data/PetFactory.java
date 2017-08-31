@@ -10,7 +10,8 @@ import java.util.List;
  * Created by joaquinalan on 30/08/2017.
  */
 
-public class PetsConstructor {
+public class PetFactory {
+
     public static Iterable<Pet> getHomePets() {
         List<Pet> pets = new ArrayList<>();
 

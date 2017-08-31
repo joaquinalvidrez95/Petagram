@@ -60,7 +60,7 @@ public class PetProfileFragment extends Fragment {
     }
 
     public void initializeAdapter() {
-        MyPetAdapter adapter = new MyPetAdapter(mMyPetImage, getActivity());
+        MyPetAdapter adapter = new MyPetAdapter(mMyPetImage);
         mRecyclerViewMyPetImages.setAdapter(adapter);
     }
 

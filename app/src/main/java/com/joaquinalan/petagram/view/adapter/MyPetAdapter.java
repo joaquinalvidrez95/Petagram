@@ -1,6 +1,5 @@
 package com.joaquinalan.petagram.view.adapter;
 
-import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,11 +18,9 @@ import java.util.List;
 
 public class MyPetAdapter extends RecyclerView.Adapter<MyPetAdapter.MyPetViewHolder> {
     private List<MyPetImage> mMyPetImageList;
-    private Activity mActivity;
 
-    public MyPetAdapter(List<MyPetImage> myPetImageList, Activity activity) {
+    public MyPetAdapter(List<MyPetImage> myPetImageList) {
         this.mMyPetImageList = myPetImageList;
-        this.mActivity = activity;
     }
 
     @Override

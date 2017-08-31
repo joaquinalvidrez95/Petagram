@@ -11,9 +11,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.joaquinalan.petagram.R;
+import com.joaquinalan.petagram.interactor.HomeInteractor;
 import com.joaquinalan.petagram.view.adapter.PageAdapter;
-import com.joaquinalan.petagram.view.fragment.HomeFragment;
 import com.joaquinalan.petagram.view.fragment.PetProfileFragment;
+import com.joaquinalan.petagram.view.fragment.PetsListFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.item_optionsmenu_star:
-                Intent recentlyLikedIntent = new Intent(this, PetsLatelyLikedActivity.class);
+                Intent recentlyLikedIntent = new Intent(this, PetsLatelyRatedActivity.class);
                 startActivity(recentlyLikedIntent);
                 break;
             case R.id.item_optionsmenu_contact:
@@ -81,7 +82,10 @@ public class MainActivity extends AppCompatActivity {
     private List<Fragment> getFragments() {
         List<Fragment> fragmentArrayList = new ArrayList<>();
 
-        fragmentArrayList.add(new HomeFragment());
+        PetsListFragment petsListFragment = new PetsListFragment();
+        petsListFragment.setInteractor(new HomeInteractor());
+
+        fragmentArrayList.add(petsListFragment);
         fragmentArrayList.add(new PetProfileFragment());
         return fragmentArrayList;
     }

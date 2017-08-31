@@ -4,18 +4,22 @@
     android:id="@+id/activity_recently_liked_pets"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activity.PetsLatelyLikedActivity">
+    tools:context=".view.activity.PetsLatelyRatedActivity">
 
     <include
         android:id="@+id/toolbar_recentlylikedpets"
         layout="@layout/layout_all_toolbar"></include>
 
-    <fragment
-        android:id="@+id/fragment_petslatelyliked"
-        android:name="com.joaquinalan.petagram.view.fragment.HomeFragment"
+    <FrameLayout
+        android:id="@+id/fragment_petslatelyrated_petslist"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar_recentlylikedpets" />
+        android:layout_height="match_parent"></FrameLayout>
+    <!--<fragment-->
+    <!--android:id="@+id/fragment_petslatelyliked"-->
+    <!--android:name="com.joaquinalan.petagram.view.fragment.PetsListFragmentment"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_below="@+id/toolbar_recentlylikedpets" />-->
 
     <!--<android.support.v7.widget.RecyclerView-->
     <!--android:id="@+id/recyclerview_recentlylikedpets"-->
