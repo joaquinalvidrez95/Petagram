@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.joaquinalan.petagram.R;
-import com.joaquinalan.petagram.model.pojo.MyPetImage;
+import com.joaquinalan.petagram.model.domain.MyPetImage;
 
 import java.util.List;
 

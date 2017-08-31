@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_recently_liked_pets"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.PetsLatelyLikedActivity">
+
+    <include
+        android:id="@+id/toolbar_recentlylikedpets"
+        layout="@layout/layout_all_toolbar"></include>
+
+    <fragment
+        android:id="@+id/fragment_petslatelyliked"
+        android:name="com.joaquinalan.petagram.view.fragment.HomeFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_recentlylikedpets" />
+
+    <!--<android.support.v7.widget.RecyclerView-->
+    <!--android:id="@+id/recyclerview_recentlylikedpets"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_below="@+id/toolbar_recentlylikedpets"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:padding="@dimen/activity_horizontal_margin" />-->
+</RelativeLayout>

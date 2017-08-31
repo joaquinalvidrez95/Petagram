@@ -10,17 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.joaquinalan.petagram.R;
-import com.joaquinalan.petagram.model.pojo.Pet;
+import com.joaquinalan.petagram.data.PetsConstructor;
 import com.joaquinalan.petagram.view.adapter.PetAdapter;
-
-import java.util.ArrayList;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class HomeFragment extends Fragment {
-    private ArrayList<Pet> mPetList;
     private RecyclerView mRecyclerViewPets;
 
     public HomeFragment() {
@@ -38,26 +35,12 @@ public class HomeFragment extends Fragment {
         llmMyLayout.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerViewPets.setLayoutManager(llmMyLayout);
 
-        initiatePetList();
         initiateAdapter();
         return view;
     }
 
-    public void initiatePetList() {
-        mPetList = new ArrayList<>();
-        mPetList.add(new Pet("Melanie", 0, R.drawable.pig));
-        mPetList.add(new Pet("Bobby", 0, R.drawable.lion));
-        mPetList.add(new Pet("Lassie", 0, R.drawable.rough_collie));
-        mPetList.add(new Pet("Ramón", 0, R.drawable.schnauzer));
-        mPetList.add(new Pet("Gatillo", 0, R.drawable.cat));
-        mPetList.add(new Pet("Toño", 0, R.drawable.tiger));
-        mPetList.add(new Pet("Omar", 0, R.drawable.nigga));
-        mPetList.add(new Pet("Mickey", 0, R.drawable.rat));
-        mPetList.add(new Pet("Rathalos", 0, R.drawable.dragon));
-    }
-
     public void initiateAdapter() {
-        PetAdapter adapter = new PetAdapter(mPetList, getActivity());
+        PetAdapter adapter = new PetAdapter(PetsConstructor.getHomePets(), getActivity());
         mRecyclerViewPets.setAdapter(adapter);
     }
 

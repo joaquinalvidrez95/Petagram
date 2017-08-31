@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.item_optionsmenu_star:
-                Intent recentlyLikedIntent = new Intent(this, RecentlyLikedPetsActivity.class);
+                Intent recentlyLikedIntent = new Intent(this, PetsLatelyLikedActivity.class);
                 startActivity(recentlyLikedIntent);
                 break;
             case R.id.item_optionsmenu_contact:
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private List<Fragment> getFragments() {
-        ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
+        List<Fragment> fragmentArrayList = new ArrayList<>();
 
         fragmentArrayList.add(new HomeFragment());
         fragmentArrayList.add(new PetProfileFragment());

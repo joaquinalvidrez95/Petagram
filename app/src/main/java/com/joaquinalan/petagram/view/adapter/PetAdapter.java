@@ -11,8 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.joaquinalan.petagram.R;
-import com.joaquinalan.petagram.model.pojo.Pet;
+import com.joaquinalan.petagram.model.domain.Pet;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,11 +21,13 @@ import java.util.List;
  */
 
 public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetViewHolder> {
-    private List<Pet> mPetList;
+    private List<Pet> mPetList = new ArrayList<>();
     private Activity mActivity;
 
-    public PetAdapter(List<Pet> petList, Activity activity) {
-        this.mPetList = petList;
+    public PetAdapter(Iterable<Pet> pets, Activity activity) {
+        for (Pet pet : pets) {
+            mPetList.add(pet);
+        }
         this.mActivity = activity;
     }
 

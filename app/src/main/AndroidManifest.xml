@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.activity.RecentlyLikedPetsActivity"
+            android:name=".view.activity.PetsLatelyLikedActivity"
             android:parentActivityName=".view.activity.MainActivity">
             <!-- Support for lower versions than 4.0 -->
             <meta-data

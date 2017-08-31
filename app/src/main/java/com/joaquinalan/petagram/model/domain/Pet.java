@@ -1,4 +1,4 @@
-package com.joaquinalan.petagram.model.pojo;
+package com.joaquinalan.petagram.model.domain;
 
 /**
  * Created by joaquinalan on 29/01/2017.
@@ -20,26 +20,26 @@ public class Pet {
         return mRating;
     }
 
-    public void setRating(int rating) {
-        this.mRating = rating;
-    }
+//    public void setRating(int rating) {
+//        this.mRating = rating;
+//    }
 
     public int getImage() {
         return mImage;
     }
 
-    public void setImage(int image) {
-        this.mImage = image;
-    }
+//    public void setImage(int image) {
+//        this.mImage = image;
+//    }
 
     public String getName() {
         return mName;
     }
 
     // Setters
-    public void setName(String name) {
-        this.mName = name;
-    }
+//    public void setName(String name) {
+//        this.mName = name;
+//    }
 
     public void likePet() {
         mRating++;

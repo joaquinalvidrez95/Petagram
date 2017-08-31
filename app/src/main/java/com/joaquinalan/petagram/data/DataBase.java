@@ -1,4 +1,4 @@
-package com.joaquinalan.petagram.model.data;
+package com.joaquinalan.petagram.data;
 
 import android.content.ContentValues;
 import android.content.Context;

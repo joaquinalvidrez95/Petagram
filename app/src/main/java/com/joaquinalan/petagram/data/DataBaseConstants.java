@@ -1,4 +1,4 @@
-package com.joaquinalan.petagram.model.data;
+package com.joaquinalan.petagram.data;
 
 /**
  * Created by joaquinalan on 06/02/2017.

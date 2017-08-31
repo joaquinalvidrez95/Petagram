@@ -5,6 +5,8 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import com.joaquinalan.petagram.model.domain.EmailAccount;
+
 import java.util.Properties;
 
 import javax.mail.Message;

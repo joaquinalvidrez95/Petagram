@@ -1,4 +1,4 @@
-package com.joaquinalan.petagram.model.pojo;
+package com.joaquinalan.petagram.model.domain;
 
 /**
  * Created by joaquinalan on 01/02/2017.
