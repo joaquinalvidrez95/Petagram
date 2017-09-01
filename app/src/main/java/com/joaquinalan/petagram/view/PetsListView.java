@@ -8,4 +8,8 @@ import com.joaquinalan.petagram.model.domain.Pet;
 
 public interface PetsListView {
     void setupRecyclerView(Iterable<Pet> pets);
+
+    void showPetRated(String name);
+
+    void updatePets();
 }

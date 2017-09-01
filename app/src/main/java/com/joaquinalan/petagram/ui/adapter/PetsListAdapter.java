@@ -1,7 +1,5 @@
-package com.joaquinalan.petagram.view.adapter;
+package com.joaquinalan.petagram.ui.adapter;
 
-import android.app.Activity;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,15 +18,17 @@ import java.util.List;
  * Created by joaquinalan on 29/01/2017.
  */
 
-public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetViewHolder> {
-    private List<Pet> mPetList = new ArrayList<>();
-    private Activity mActivity;
+public class PetsListAdapter extends RecyclerView.Adapter<PetsListAdapter.PetViewHolder> {
+    private List<Pet> mPets = new ArrayList<>();
+    private PetsListAdapterListener mListener;
+    //private Activity mActivity;
 
-    public PetAdapter(Iterable<Pet> pets, Activity activity) {
+    public PetsListAdapter(Iterable<Pet> pets, PetsListAdapterListener petsListAdapterListener) {
         for (Pet pet : pets) {
-            mPetList.add(pet);
+            mPets.add(pet);
         }
-        this.mActivity = activity;
+        //  this.mActivity = activity;
+        mListener = petsListAdapterListener;
     }
 
     // It inflates layout and passes viewHolder to get the views
@@ -41,40 +41,61 @@ public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetViewHolder> {
     // Matches each element from the list each view
     @Override
     public void onBindViewHolder(final PetViewHolder holder, int position) {
-        final Pet pet = mPetList.get(position);
+        final Pet pet = mPets.get(position);
 
         holder.mImageViewPetImage.setImageResource(pet.getImage());
         holder.mTextViewName.setText(pet.getName());
         holder.mTextViewRating.setText(String.valueOf(pet.getRating()));
-
-        holder.mButtonLikeBone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, mActivity.getString(R.string.petadapter_likesnackbarmessage) +
-                        " " + pet.getName(), Snackbar.LENGTH_SHORT).show();
-                pet.likePet();
-                holder.mTextViewRating.setText(String.valueOf(pet.getRating()));
-            }
-        });
     }
 
     @Override
     public int getItemCount() { // Number of elements that my List has.
-        return mPetList.size();
+        return mPets.size();
     }
 
-    public static class PetViewHolder extends RecyclerView.ViewHolder {
+    public void updatePets() {
+//        ListIterator<Pet> listIterator = mPets.listIterator();
+//        while (listIterator.hasNext()) {
+//            // Need to call next, before set.
+//
+//            if (listIterator.next().getId() == petRated.getId()) {
+//                // Replace item returned from next()
+//                listIterator.set(petRated);
+//            }
+//        }
+        notifyDataSetChanged();
+    }
+
+    public interface PetsListAdapterListener {
+        void onButtonLikeBoneClicked(Pet pet, View view);
+    }
+
+    class PetViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private final ImageView mImageViewPetImage;
         private final ImageButton mButtonLikeBone;
         private final TextView mTextViewName;
         private final TextView mTextViewRating;
 
-        public PetViewHolder(View itemView) {
+        PetViewHolder(View itemView) {
             super(itemView);
             mImageViewPetImage = (ImageView) itemView.findViewById(R.id.imageview_petcardview_petimage);
             mButtonLikeBone = (ImageButton) itemView.findViewById(R.id.button_petcardview_likebone);
             mTextViewName = (TextView) itemView.findViewById(R.id.textview_petcardview_petname);
             mTextViewRating = (TextView) itemView.findViewById(R.id.textview_petcardview_rating);
+
+            mButtonLikeBone.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            int petPosition = getAdapterPosition();
+            final Pet pet = mPets.get(petPosition);
+
+            switch (v.getId()) {
+                case R.id.button_petcardview_likebone:
+                    mListener.onButtonLikeBoneClicked(pet, v);
+                    break;
+            }
         }
     }
 }

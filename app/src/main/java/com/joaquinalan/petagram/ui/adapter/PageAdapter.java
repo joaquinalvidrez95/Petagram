@@ -1,4 +1,4 @@
-package com.joaquinalan.petagram.view.adapter;
+package com.joaquinalan.petagram.ui.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

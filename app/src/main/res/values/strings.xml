@@ -6,8 +6,8 @@
     <string name="optionsmenu_startitle">Recently Liked</string>
 
     <string name="petcardview_petname">Pork</string>
-    <string name="petadapter_likesnackbarmessage">Liked </string>
-    <string name="recentlylikedpets_toolbartitle">Recently Liked Pets</string>
+    <string name="petadapter_likesnackbarmessage">Liked</string>
+    <string name="petslatelyrated_toolbartitle">Pets Lately Liked</string>
 
     <string name="contact_namehint">Name</string>
     <string name="contact_emailhint">Email</string>

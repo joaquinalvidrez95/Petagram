@@ -4,45 +4,43 @@ package com.joaquinalan.petagram.model.domain;
  * Created by joaquinalan on 29/01/2017.
  */
 
-public class Pet {
+public class Pet implements MyPet {
     private String mName;
     private int mRating;
     private int mImage;
+    private int mId;
 
-    public Pet(String name, int rating, int image) {
+    public Pet(int id, String name, int rating, int image) {
+        this.mId = id;
         this.mName = name;
         this.mRating = rating;
         this.mImage = image;
     }
 
     // Getters
+    @Override
     public int getRating() {
         return mRating;
     }
 
-//    public void setRating(int rating) {
-//        this.mRating = rating;
-//    }
-
+    @Override
     public int getImage() {
         return mImage;
     }
-
-//    public void setImage(int image) {
-//        this.mImage = image;
-//    }
 
     public String getName() {
         return mName;
     }
 
-    // Setters
-//    public void setName(String name) {
-//        this.mName = name;
-//    }
-
     public void likePet() {
         mRating++;
     }
 
+    public int getId() {
+        return mId;
+    }
+
+//    public void setId(int id) {
+//        this.mId = id;
+//    }
 }

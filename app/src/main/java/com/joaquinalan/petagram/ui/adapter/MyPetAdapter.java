@@ -1,4 +1,4 @@
-package com.joaquinalan.petagram.view.adapter;
+package com.joaquinalan.petagram.ui.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,8 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.joaquinalan.petagram.R;
-import com.joaquinalan.petagram.model.domain.MyPetImage;
+import com.joaquinalan.petagram.model.domain.MyPet;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,10 +18,12 @@ import java.util.List;
  */
 
 public class MyPetAdapter extends RecyclerView.Adapter<MyPetAdapter.MyPetViewHolder> {
-    private List<MyPetImage> mMyPetImageList;
+    private List<MyPet> mMyPetImageList = new ArrayList<>();
 
-    public MyPetAdapter(List<MyPetImage> myPetImageList) {
-        this.mMyPetImageList = myPetImageList;
+    public MyPetAdapter(Iterable<MyPet> myPetImages) {
+        for (MyPet pet : myPetImages) {
+            mMyPetImageList.add(pet);
+        }
     }
 
     @Override
@@ -31,7 +34,7 @@ public class MyPetAdapter extends RecyclerView.Adapter<MyPetAdapter.MyPetViewHol
 
     @Override
     public void onBindViewHolder(MyPetViewHolder holder, int position) {
-        final MyPetImage petImage = mMyPetImageList.get(position);
+        final MyPet petImage = mMyPetImageList.get(position);
 
         holder.mImageViewPetImage.setImageResource(petImage.getImage());
         holder.mTextViewRating.setText(String.valueOf(petImage.getRating()));

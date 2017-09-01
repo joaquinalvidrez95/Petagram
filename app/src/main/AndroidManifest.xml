@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.activity.MainActivity">
+        <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,26 +17,26 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.activity.PetsLatelyRatedActivity"
-            android:parentActivityName=".view.activity.MainActivity">
+            android:name=".ui.activity.PetsLatelyRatedActivity"
+            android:parentActivityName=".ui.activity.MainActivity">
             <!-- Support for lower versions than 4.0 -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.activity.MainActivity" />
+                android:value=".ui.activity.MainActivity" />
         </activity>
         <activity
-            android:name=".view.activity.ContactActivity"
-            android:parentActivityName=".view.activity.MainActivity">
+            android:name=".ui.activity.ContactActivity"
+            android:parentActivityName=".ui.activity.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.activity.MainActivity" />
+                android:value=".ui.activity.MainActivity" />
         </activity>
         <activity
-            android:name=".view.activity.AboutActivity"
-            android:parentActivityName=".view.activity.MainActivity">
+            android:name=".ui.activity.AboutActivity"
+            android:parentActivityName=".ui.activity.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.activity.MainActivity" />
+                android:value=".ui.activity.MainActivity" />
         </activity>
     </application>
 

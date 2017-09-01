@@ -8,4 +8,6 @@ import com.joaquinalan.petagram.model.domain.Pet;
 
 public interface PetsListInteractor {
     Iterable<Pet> getPets();
+
+    void ratePet(Pet pet, PetsListInteractorListener petsListInteractorListener);
 }

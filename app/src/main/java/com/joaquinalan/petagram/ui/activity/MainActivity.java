@@ -1,6 +1,8 @@
-package com.joaquinalan.petagram.view.activity;
+package com.joaquinalan.petagram.ui.activity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -11,10 +13,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.joaquinalan.petagram.R;
+import com.joaquinalan.petagram.data.PetagramDbHelper;
 import com.joaquinalan.petagram.interactor.HomeInteractor;
-import com.joaquinalan.petagram.view.adapter.PageAdapter;
-import com.joaquinalan.petagram.view.fragment.PetProfileFragment;
-import com.joaquinalan.petagram.view.fragment.PetsListFragment;
+import com.joaquinalan.petagram.ui.adapter.PageAdapter;
+import com.joaquinalan.petagram.ui.fragment.PetProfileFragment;
+import com.joaquinalan.petagram.ui.fragment.PetsListFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -83,7 +86,10 @@ public class MainActivity extends AppCompatActivity {
         List<Fragment> fragmentArrayList = new ArrayList<>();
 
         PetsListFragment petsListFragment = new PetsListFragment();
-        petsListFragment.setInteractor(new HomeInteractor());
+
+        SQLiteOpenHelper sqLiteOpenHelper = new PetagramDbHelper(this);
+        SQLiteDatabase db = sqLiteOpenHelper.getWritableDatabase();
+        petsListFragment.setInteractor(new HomeInteractor(db));
 
         fragmentArrayList.add(petsListFragment);
         fragmentArrayList.add(new PetProfileFragment());
