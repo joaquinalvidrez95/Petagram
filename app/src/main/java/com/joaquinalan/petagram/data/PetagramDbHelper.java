@@ -15,8 +15,6 @@ import com.joaquinalan.petagram.model.domain.Pet;
 public class PetagramDbHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "petagram.db";
     public static final int DATABASE_VERSION = 1;
-    //private static final int LIKE = 1;
-
 
     public PetagramDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
