@@ -13,5 +13,6 @@ public class PetagramContract {
         public static final String COLUMN_NAME = "name";
         public static final String COLUMN_RATING = "rating";
         public static final String COLUMN_IMAGE = "image";
+        public static final String COLUMN_TIMESTAMP = "timestamp";
     }
 }

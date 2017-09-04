@@ -22,9 +22,8 @@ public class PetFactory {
         pets.add(new Pet(4, "Ramón", 0, R.drawable.schnauzer));
         pets.add(new Pet(5, "Gatillo", 0, R.drawable.cat));
         pets.add(new Pet(6, "Toño", 0, R.drawable.tiger));
-        pets.add(new Pet(7, "Omar", 0, R.drawable.nigga));
-        pets.add(new Pet(8, "Mickey", 0, R.drawable.rat));
-        pets.add(new Pet(9, "Rathalos", 0, R.drawable.dragon));
+        pets.add(new Pet(7, "Mickey", 0, R.drawable.rat));
+        pets.add(new Pet(8, "Rathalos", 0, R.drawable.dragon));
 
         return pets;
     }

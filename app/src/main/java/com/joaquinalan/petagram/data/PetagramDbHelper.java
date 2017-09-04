@@ -27,10 +27,11 @@ public class PetagramDbHelper extends SQLiteOpenHelper {
         String queryCreateContactTable = "CREATE TABLE " +
                 PetagramContract.PetTable.TABLE_NAME + "(" +
                 //PetagramContract.PetTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                PetagramContract.PetTable._ID + " INTEGER PRIMARY KEY, " +
+                PetagramContract.PetTable._ID + " INTEGER NOT NULL PRIMARY KEY, " +
                 PetagramContract.PetTable.COLUMN_NAME + " TEXT, " +
-                PetagramContract.PetTable.COLUMN_RATING + " TEXT, " +
-                PetagramContract.PetTable.COLUMN_IMAGE + " INTEGER" +
+                PetagramContract.PetTable.COLUMN_RATING + " INTEGER, " +
+                PetagramContract.PetTable.COLUMN_IMAGE + " INTEGER, " +
+                PetagramContract.PetTable.COLUMN_TIMESTAMP + " TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP" +
                 ")";
 
         sqLiteDatabase.execSQL(queryCreateContactTable);

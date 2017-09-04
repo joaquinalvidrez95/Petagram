@@ -3,11 +3,11 @@
 
     <string name="optionsmenu_abouttitle">About</string>
     <string name="optionsmenu_contacttitle">Contact</string>
-    <string name="optionsmenu_startitle">Recently Liked</string>
+    <string name="optionsmenu_startitle">Recently Rated</string>
 
     <string name="petcardview_petname">Pork</string>
-    <string name="petadapter_likesnackbarmessage">Liked</string>
-    <string name="petslatelyrated_toolbartitle">Pets Lately Liked</string>
+    <string name="petadapter_likesnackbarmessage">You Like</string>
+    <string name="petslatelyrated_toolbartitle">Pets Lately Rated</string>
 
     <string name="contact_namehint">Name</string>
     <string name="contact_emailhint">Email</string>

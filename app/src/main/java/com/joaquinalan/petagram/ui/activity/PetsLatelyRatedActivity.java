@@ -1,11 +1,14 @@
 package com.joaquinalan.petagram.ui.activity;
 
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.joaquinalan.petagram.R;
+import com.joaquinalan.petagram.data.PetagramDbHelper;
 import com.joaquinalan.petagram.interactor.PetsLatelyRatedInteractor;
 import com.joaquinalan.petagram.ui.fragment.PetsListFragment;
 
@@ -24,7 +27,11 @@ public class PetsLatelyRatedActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         PetsListFragment petsListFragment = new PetsListFragment();
-        petsListFragment.setInteractor(new PetsLatelyRatedInteractor());
+
+        SQLiteOpenHelper sqLiteOpenHelper = new PetagramDbHelper(this);
+        SQLiteDatabase db = sqLiteOpenHelper.getWritableDatabase();
+
+        petsListFragment.setInteractor(new PetsLatelyRatedInteractor(db));
 
         // Add the fragment to its container using a FragmentManager and a Transaction
         FragmentManager fragmentManager = getSupportFragmentManager();

@@ -1,6 +1,5 @@
 package com.joaquinalan.petagram.interactor;
 
-import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -14,11 +13,10 @@ import java.util.List;
  * Created by joaquinalan on 31/08/2017.
  */
 
-public class HomeInteractor implements PetsListInteractor {
-    private SQLiteDatabase mDb;
+public class HomeInteractor extends PetsListInteractor {
 
     public HomeInteractor(SQLiteDatabase sqLiteDatabase) {
-        mDb = sqLiteDatabase;
+        super(sqLiteDatabase);
     }
 
     @Override
@@ -49,39 +47,6 @@ public class HomeInteractor implements PetsListInteractor {
             pets.add(pet);
         }
         return pets;
-    }
-
-    @Override
-    public void ratePet(Pet pet, PetsListInteractorListener petsListInteractorListener) {
-
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(PetagramContract.PetTable._ID, pet.getId());
-        contentValues.put(PetagramContract.PetTable.COLUMN_RATING, pet.getRating() + 1);
-        contentValues.put(PetagramContract.PetTable.COLUMN_NAME, pet.getName());
-        contentValues.put(PetagramContract.PetTable.COLUMN_IMAGE, pet.getImage());
-        //dateTime()
-        //mDb.insert(PetagramContract.PetTable.TABLE_NAME, null, contentValues);
-        mDb.update(
-                PetagramContract.PetTable.TABLE_NAME,
-                contentValues,
-                PetagramContract.PetTable._ID + "=?",
-                new String[]{String.valueOf(pet.getId())}
-        );
-
-        petsListInteractorListener.onPetRated(pet);
-    }
-
-    private boolean hasPet(int petId) {
-        Cursor cursor = mDb.query(
-                PetagramContract.PetTable.TABLE_NAME,
-                null,
-                petId + "=" + PetagramContract.PetTable._ID,
-                null,
-                null,
-                null,
-                null
-        );
-        return cursor.moveToFirst();
     }
 
 //    private boolean isFull() {
